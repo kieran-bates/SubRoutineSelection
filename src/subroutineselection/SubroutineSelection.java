@@ -43,18 +43,35 @@ public class SubroutineSelection {
             System.out.println("1...Rectancular Prism Volume Calculator");
             System.out.println("2...Average Calculator");
             System.out.println("3...Circumferance Calculator");
-            System.out.println("\nPlease select the program number you wish to run -->");
+            System.out.print("\nPlease select the program number you wish to run --> ");
             
-            if(input.nextInt() == 1)
+            int selection = input.nextInt();
+            
+            if(selection == 1)
             {
-                System.out.println("\nEnter the length -->");
+                System.out.print("\n\nEnter the length --> ");
                 int l = input.nextInt();
-                System.out.println("Enter the width -->");
+                System.out.print("\nEnter the width --> ");
                 int w = input.nextInt();
-                System.out.println("Enter the height -->");
+                System.out.print("\nEnter the height --> ");
                 int h = input.nextInt();
                 
-                System.out.println("\nThe volume is "+areaAndOut(l, w, h));
+                System.out.println("\n\nThe volume is "+areaAndOut(l, w, h));
+            }
+            
+            if(selection == 2)
+            {
+                System.out.print("\n\nEnter the first number --> ");
+                int one = input.nextInt();
+                System.out.print("\nEnter the second number --> ");
+                int two = input.nextInt();
+                System.out.print("\nEnter the third number --> ");
+                int three = input.nextInt();
+                System.out.print("\nEnter the fourth number --> ");
+                int four = input.nextInt();
+                
+                averageAndOut(one, two, three, four);
+                
             }
         }
     }
