@@ -26,9 +26,33 @@ public class SubroutineSelection {
         System.out.println((one + two + three + four)/4);
     }
     
+    public static void accelerationAndOut(double vFinal, double vInitial, double displacement)
+    {
+        double vFinalSquared = vFinal*vFinal;
+        double vInitialSquared = vInitial*vInitial;
+        double velocityDifference = vFinalSquared-vInitialSquared;
+        double twoTimesDisplacement = 2*displacement;
+        double acceleration = velocityDifference/twoTimesDisplacement;
+        
+        System.out.println("\nThe acceleration is " +acceleration+ " m/s");
+    }
+    
     public static void circumferanceAndOut(int one)
     {
         System.out.println(2*(Math.PI)*one);
+    }
+    
+    public static void factorialAndOut(int factorial)
+    {
+        int n = 1;
+        int answer = 0;
+        for(int i = 0; i<factorial; i++)
+        {
+            answer = n *(n+1);
+            n = n + 1;
+        }
+        
+        System.out.println("The factorial of "+factorial+ "is " +answer);
     }
             
     public static void main(String[] args) {
@@ -43,6 +67,7 @@ public class SubroutineSelection {
             System.out.println("1...Rectancular Prism Volume Calculator");
             System.out.println("2...Average Calculator");
             System.out.println("3...Circumferance Calculator");
+            System.out.println("4...Acceleration Calculator");
             System.out.print("\nPlease select the program number you wish to run --> ");
             
             int selection = input.nextInt();
@@ -72,6 +97,31 @@ public class SubroutineSelection {
                 
                 averageAndOut(one, two, three, four);
                 
+            }
+            if(selection == 3)
+            {
+                
+                System.out.print("\n\nEnter the radius of the circle --> ");
+                int one = input.nextInt();
+                circumferanceAndOut(one);
+            }
+            if(selection == 4)
+            {
+                System.out.print("Enter the initial velocity of the object in m/s --> ");
+                double vInitial = input.nextDouble();
+                System.out.print("\nEnter the final velocity of the object in m/s --> ");
+                double vFinal = input.nextDouble();
+                System.out.print("\nEnter the displacement of the object over the acceleration period in m --> ");
+                double displacement = input.nextDouble();
+            
+                accelerationAndOut(vInitial, vFinal, displacement);
+            }
+            if(selection == 5)
+            {
+                
+                System.out.println("Enter an integer --> ");
+                int one = input.nextInt();
+                factorialAndOut(one);
             }
         }
     }
